@@ -6,7 +6,7 @@ const _ = require("lodash");
 const Alert = require("react-bootstrap/lib/Alert");
 
 //Mixins
-const cssMixins  = require("../mixins/cssMixin.es6.js");
+const cssMixins  = require("morse-react-mixins/lib/cssMixin");
 // const textMixins = require("../mixins/textMixins.es6.js");
 
 class FlashNotice extends React.Component {

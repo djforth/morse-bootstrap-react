@@ -7,19 +7,21 @@ const _ = require("lodash");
 const Nav        = require("react-bootstrap/lib/Nav");
 const NavItem    = require("react-bootstrap/lib/NavItem");
 
-const DropDown = require("./dropdown.es6.js");
+const DropDown = require("./dropdown");
 
-const Navitems = React.createClass({
+class Navitems extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   createDropdown(subnav, title){
     return (<DropDown menuitems={subnav} title={title} key={_.uniqueId("dropdown")}></DropDown> );
-  },
+  }
 
   createNavItem (path, title, n){
     // console.log()
     return (<NavItem eventKey={n} href={path} key={_.uniqueId("navitem")}>{title}</NavItem>);
-  },
-
-
+  }
 
   renderNav(){
      // let _that = this;
@@ -33,7 +35,7 @@ const Navitems = React.createClass({
     }.bind(this));
 
     return navlist;
-   },
+   }
 
    render() {
       return (
@@ -42,6 +44,6 @@ const Navitems = React.createClass({
         </Nav>
       );
    }
- });
+ }
 
 module.exports = Navitems;

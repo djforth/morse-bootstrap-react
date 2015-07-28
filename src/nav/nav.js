@@ -7,14 +7,18 @@ const _ = require("lodash");
 const Navbar         = require("react-bootstrap/lib/Navbar");
 const CollapsibleNav = require("react-bootstrap/lib/CollapsibleNav");
 
-const Navitems = require("./navitems.es6.js");
+const Navitems = require("./navitems");
 
-var NavDropdown = React.createClass({
+class NavDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   link() {
     return (
       <a href="/" title="Go to Home">{this.props.title}</a>
     );
-  },
+  }
 
   render() {
     return (
@@ -25,6 +29,6 @@ var NavDropdown = React.createClass({
       </Navbar>
     );
   }
-});
+}
 
 module.exports = NavDropdown;

@@ -7,13 +7,17 @@ const _ = require("lodash");
 let DropdownButton = require("react-bootstrap/lib/DropdownButton");
 let MenuItem       = require("react-bootstrap/lib/MenuItem");
 
-var DropDown = React.createClass({
+class DropDown extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   renderMenuItems(){
     let menulist = this.props.menuitems.map(function(mi){
       return (<MenuItem href={mi.path} key={_.uniqueId("menuitem")}>{mi.title}</MenuItem>);
     });
     return menulist;
-  },
+  }
 
   render() {
     return (
@@ -22,6 +26,6 @@ var DropDown = React.createClass({
         </DropdownButton>
     );
   }
-});
+}
 
 module.exports = DropDown;

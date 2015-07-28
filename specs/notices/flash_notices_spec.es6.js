@@ -1,13 +1,13 @@
-const FlashNotice = require("../../javascripts/components/notices/flash_notices.es6.js");
+const FlashNotice = require("../../src/notices/flash_notices");
 
-const Immutable = require('immutable');
 const _         = require('lodash');
 
 // Test Helpers
 const TestUtils       = React.addons.TestUtils;
-const componentHelper = require("../../../utils/componentHelpers.es6.js");
+// Morse helpers
+const jasmineReactHelpers = require("react-jasmine");
+const componentHelper     = jasmineReactHelpers.componentHelpers;
 
-const jasmineReactHelpers = require("../../../utils/jasmineReactHelpers.es6.js");
 
 let spys = [
   {

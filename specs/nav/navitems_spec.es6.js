@@ -1,9 +1,9 @@
 var navItems;
 var React        = window.React  = require('react/addons');
-const Navitems   = require("../../javascripts/components/react-bootstrap/navitems.es6.js");
+const Navitems   = require("../../src/nav/navitems");
 const TestUtils  = React.addons.TestUtils;
 
-const jasmineReactHelpers = require("../../../utils/jasmineReactHelpers.es6.js");
+const jasmineReactHelpers = require("react-jasmine");
 
 let spys = [
   {

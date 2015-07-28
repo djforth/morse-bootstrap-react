@@ -1,9 +1,9 @@
 var dropDown;
 var React        = window.React  = require('react/addons');
-const Dropdown   = require("../../javascripts/components/react-bootstrap/dropdown.es6.js");
+const Dropdown   = require("../../src/nav/dropdown");
 const TestUtils  = React.addons.TestUtils;
 
-const jasmineReactHelpers = require("../../../utils/jasmineReactHelpers.es6.js");
+const jasmineReactHelpers = require("react-jasmine");
 
 let spys = [
   {

@@ -1,13 +1,12 @@
 
 
 //Libraries
-React = require("react/addons");
+const React = require("react/addons");
 
-const _               = require("lodash");
+const _  = require("lodash");
 
 //Morse Libraries
-// const AjaxPromises  = require("ajax-es6-module");
-const AjaxPromises  = require("./ajaxApi.es6.js");
+const AjaxPromises  = require("ajax-es6-module");
 
 var OverlayTrigger = require("react-bootstrap/lib/OverlayTrigger");
 var Tooltip        = require("react-bootstrap/lib/Tooltip");

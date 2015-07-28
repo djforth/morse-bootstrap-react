@@ -1,10 +1,10 @@
 var navmenu;
 var React = window.React  = require('react/addons');
-const NavDropdown = require("../../javascripts/components/react-bootstrap/nav.es6.js");
+const NavDropdown = require("../../src/nav/nav");
 const TestUtils   = React.addons.TestUtils;
 // const _ = require('lodash')
 
-const jasmineReactHelpers = require("../../../utils/jasmineReactHelpers.es6.js");
+const jasmineReactHelpers = require("react-jasmine");
 
 let spys = [
   {

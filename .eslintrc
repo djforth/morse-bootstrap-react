@@ -20,6 +20,7 @@
     "jsx": true
   },
   "rules": {
+    "no-alert":[0],
     "camelcase": [0],
     "comma-spacing": [1, {"before": false, "after": true}],
     "consistent-return": [0],

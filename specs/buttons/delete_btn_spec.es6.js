@@ -1,14 +1,13 @@
-const DeleteBtn = require("../../javascripts/components/buttons/delete_btn.es6.js");
-
-const Immutable = require('immutable');
+const DeleteBtn = require("../../src/buttons/delete_btn");
+const React = require("react/addons");
+// const Immutable = require('immutable');
 const _         = require('lodash');
 
 // Test Helpers
 const TestUtils       = React.addons.TestUtils;
-const componentHelper = require("../../../utils/componentHelpers.es6.js");
-
-const jasmineReactHelpers = require("../../../utils/jasmineReactHelpers.es6.js");
-
+// Morse helpers
+const jasmineReactHelpers = require("react-jasmine");
+const componentHelper     = jasmineReactHelpers.componentHelpers;
 
 let spys = [
   {
@@ -94,8 +93,6 @@ describe('delete_btn', function() {
     it("should set addURL on mounting", function() {
       expect(spy.addUrl).toHaveBeenCalledWith(props.delete_api);
     });
-
-
   });
 
   describe('_onClick', function() {
@@ -139,6 +136,38 @@ describe('delete_btn', function() {
       "_onClick",
       "click"
     );
+  });
+
+  describe('check render', function() {
+    describe('check a link render ok', function() {
+      componentHelper.checkRender(
+        ()=>{
+          return delete_btn;
+        },
+        {type:"tag", tag:"button"},
+        {
+          attributes:[
+            {key:"class", value:"btn btn-danger btn-sm"},
+            {key:"title", value:props.tooltip},
+            {key:"type" , value:"button"},
+          ]
+        }
+      );
+    });
+
+    describe('check Icon rendered ok', function() {
+      componentHelper.checkRender(
+        ()=>{
+          return delete_btn;
+        },
+        {type:"tag", tag:"span"},
+        {
+          attributes:[
+            {key:"class", value:"glyphicon glyphicon-trash"}
+          ]
+        }
+      );
+    });
   });
 
 });
