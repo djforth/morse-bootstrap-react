@@ -18,7 +18,7 @@ exports.NavBar = {
   NavItems : NavItems
 };
 
-const FlashNotice = require("./lib/notices/flash_notice");
+const FlashNotice = require("./lib/notices/flash_notices");
 
 exports.FlashNotice = FlashNotice;
 
