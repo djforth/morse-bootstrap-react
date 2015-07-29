@@ -18,9 +18,9 @@ class Navitems extends React.Component {
     return (<DropDown menuitems={subnav} title={title} key={_.uniqueId("dropdown")}></DropDown> );
   }
 
-  createNavItem (path, title, n){
+  createNavItem (path, title, selected=false, n){
     // console.log()
-    return (<NavItem eventKey={n} href={path} key={_.uniqueId("navitem")}>{title}</NavItem>);
+    return (<NavItem eventKey={n} href={path} active={selected} key={_.uniqueId("navitem")}>{title}</NavItem>);
   }
 
   renderNav(){
@@ -28,7 +28,7 @@ class Navitems extends React.Component {
      let navlist = _.map(this.props.items, function(ni, i){
       if (_.isUndefined(ni.subnav) || _.isEmpty(ni.subnav)) {
         // console.log("id", ni.data.id)
-        return (this.createNavItem(ni.path, ni.title, i));
+        return (this.createNavItem(ni.path, ni.title, ni.active,i));
       } else {
         return (this.createDropdown(ni.subnav, ni.title) );
       }

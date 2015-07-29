@@ -14,7 +14,7 @@ class DropDown extends React.Component {
 
   renderMenuItems(){
     let menulist = this.props.menuitems.map(function(mi){
-      return (<MenuItem href={mi.path} key={_.uniqueId("menuitem")}>{mi.title}</MenuItem>);
+      return (<MenuItem href={mi.path} active={mi.active} key={_.uniqueId("menuitem")}>{mi.title}</MenuItem>);
     });
     return menulist;
   }
