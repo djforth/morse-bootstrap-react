@@ -13,8 +13,8 @@ const MaterialDeleteBtn = require("./lib/buttons/material_delete_btn");
 const MaterialIconBtn   = require("./lib/buttons/material_icon_btn");
 
 exports.Material = {
-  Delete : DeleteBtn,
-  Icon   : IconBtn
+  Delete : MaterialDeleteBtn,
+  Icon   : MaterialIconBtn
 };
 
 const DropDown = require("./lib/nav/dropdown");
