@@ -56,12 +56,11 @@ describe('FlashNotice', function() {
       {
         title:"Alert",
         props:{
-          bsStyle:"info"
+          bsStyle:"success"
         }
       }
     ], spied);
   });
-
 
   describe('check content', function() {
     jasmineReactHelpers.checkContent(
@@ -85,14 +84,19 @@ describe('FlashNotice', function() {
       expect(flash_notice.setAlert()).toEqual("default");
     });
 
-    it("should return info if type notice", function() {
+    it("should return success if type notice", function() {
       flash_notice.props.type = "notice";
-      expect(flash_notice.setAlert()).toEqual("info");
+      expect(flash_notice.setAlert()).toEqual("success");
     });
 
     it("should return danger if type error", function() {
       flash_notice.props.type = "error";
       expect(flash_notice.setAlert()).toEqual("danger");
+    });
+
+    it("should return warn if type alert", function() {
+      flash_notice.props.type = "alert";
+      expect(flash_notice.setAlert()).toEqual("warn");
     });
 
     it("should return success if type success", function() {
