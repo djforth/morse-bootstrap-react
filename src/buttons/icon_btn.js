@@ -7,7 +7,7 @@ var OverlayTrigger = require("react-bootstrap/lib/OverlayTrigger");
 var Tooltip        = require("react-bootstrap/lib/Tooltip");
 
 //Mixins
-const cssMixins  = require("morse-react-mixins/lib/cssMixin");
+const cssMixins  = require("morse-react-mixins/lib/css_mixins");
 
 class IconButton extends React.Component {
   constructor(props) {

@@ -6,7 +6,7 @@ const _ = require("lodash");
 const Alert = require("react-bootstrap/lib/Alert");
 
 //Mixins
-const cssMixins  = require("morse-react-mixins/lib/cssMixin");
+const cssMixins  = require("morse-react-mixins/lib/css_mixins");
 // const textMixins = require("../mixins/textMixins.es6.js");
 
 class FlashNotice extends React.Component {
@@ -31,10 +31,13 @@ class FlashNotice extends React.Component {
     let css = "default";
     switch(this.props.type){
       case "notice":
-        css = "info";
+        css = "success";
       break;
       case "error":
         css = "danger";
+      break;
+      case "alert":
+        css = "warn";
       break;
       case "success":
         css = "success";
