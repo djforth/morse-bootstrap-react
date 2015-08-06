@@ -1,5 +1,5 @@
 //Libraries
-React   = require("react/addons");
+const React   = require("react/addons");
 
 const _ = require("lodash");
 

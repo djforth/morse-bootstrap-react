@@ -4,11 +4,17 @@ const Navitems   = require("../../src/nav/navitems");
 const TestUtils  = React.addons.TestUtils;
 
 const jasmineReactHelpers = require("react-jasmine");
-
+const componentHelpers    = jasmineReactHelpers.componentHelpers
 let spys = [
   {
     fn:function(){
-      return  (<a className="nav-item" href={this.props.path}>{ this.props.children }</a>);
+      return  (<ul className="nav-bar" >{ this.props.children }</ul>);
+    },
+    title:"Nav"
+  },
+  {
+    fn:function(){
+      return  (<a className={`nav-item ${this.props.active}`} href={this.props.path}>{ this.props.children }</a>);
     },
     title:"NavItem"
   },
@@ -26,15 +32,29 @@ let spys = [
   }
 ];
 
-let mockdata = [{title:"nav 1", path:"/"}, {title:"nav 2", path:"/nav2", subnav:[{title:"subnav 1", path:"/subnav1"}, {title:"subnav 2", path:"/subnav2"}]}];
-
+let mockdata = [
+  {title:"nav 1", selected:false, path:"/", options:{divider:false, icon:"", placement:"left", noCaret:false}
+  },
+  {title:"nav 2", selected:false,
+   subnav:[
+      {title:"subnav 1", path:"/subnav1"},
+      {title:"subnav 2", path:"/subnav2"}
+    ],
+    options:{divider:false, icon:"", placement:"left", noCaret:false}
+  }
+];
 
 describe('Navitems', ()=> {
   let spied = jasmineReactHelpers.spyOnComponents(spys, Navitems);
 
 
   beforeEach(() => {
-    navItems = TestUtils.renderIntoDocument(<Navitems items={mockdata} /> );
+    navItems = TestUtils.renderIntoDocument(<Navitems navitems={mockdata} /> );
+    spyOn(navItems, "createTitle").and.callFake((t)=>{
+      return t.title
+    });
+
+    navItems.forceUpdate();
   });
 
   it("renders", () => {
@@ -42,7 +62,7 @@ describe('Navitems', ()=> {
   });
 
   it("should have correct props", ()=> {
-    expect(navItems.props.items).toEqual(mockdata);
+    expect(navItems.props.navitems).toEqual(mockdata);
   });
 
   jasmineReactHelpers.checkContent(
@@ -74,6 +94,7 @@ describe('Navitems', ()=> {
       {
         title:"NavItem",
         props:{
+          active:false,
           eventKey:0,
           href: "/"
         }
@@ -81,12 +102,28 @@ describe('Navitems', ()=> {
       {
         title:"DropDown",
         props:{
-          menuitems:mockdata[1].subnav,
-          title: "nav 2"
+          active:false,
+          menuitems:mockdata[1].subnav
         }
       }
     ]
     , spied
   );
+
+  // describe('createNavItem', function() {
+  //   let ni;
+  //   beforeEach(()=>{
+  //     console.log('test', navItems.createNavItem );
+  //     spyOn(navItems, "createNavItem").and.returnValue("active")
+  //     ni = componentHelpers.checkSubRender(navItems.createNavItem, mockdata[0]);
+  //   });
+
+  //   it("should exist", function() {
+  //     expect(ni).toBeDefined();
+  //     let t = TestUtils.findRenderedDOMComponentWithClass(ni, "nav-items")
+  //     console.log("ni", t.getDOMNode())
+  //   });
+  // });
+
 });
 

@@ -29,7 +29,7 @@ let spys = [
 ];
 
 let mockdata = [
-  {title:"subnav 1", path:"/subnav1"}
+  {title:"subnav 1", path:"/subnav1", options:{divider:false, icon:"", placement:"left", noCaret:false}}
 ];
 
 
@@ -38,6 +38,12 @@ describe('DropDown', ()=> {
 
   beforeEach(() => {
     dropDown = TestUtils.renderIntoDocument(<Dropdown title={"dropdown title"} menuitems={mockdata} /> );
+
+    spyOn(dropDown, "createTitle").and.callFake((t)=>{
+      return t.title
+    });
+
+    dropDown.forceUpdate();
   });
 
   it("renders", () => {

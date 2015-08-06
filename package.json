@@ -1,6 +1,6 @@
 {
   "name": "morse-bootstrap-react",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Useful react mixins",
   "main": "index.js",
   "repository": {
@@ -38,7 +38,6 @@
     "karma-ie-launcher": "^0.2.0",
     "karma-ievms": "0.0.4",
     "karma-jasmine": "^0.3.6",
-    "karma-opera-launcher": "^0.2.0",
     "karma-phantomjs-launcher": "^0.2.0",
     "karma-safari-launcher": "^0.1.1",
     "karma-story-reporter": "^0.3.1",
@@ -69,6 +68,6 @@
     "test:watch": "karma start --browsers PhantomJS",
     "test:ie9": "karma start --single-run --browsers \"IE9 - Win7\"",
     "test:ie10": "karma start --single-run --browsers \"IE10 - Win7\"",
-    "test:mac": "karma start --single-run --browsers Chrome,Firefox,Safari,Opera"
+    "test:mac": "karma start --single-run --browsers Chrome,Firefox,Safari"
   }
 }

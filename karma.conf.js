@@ -17,6 +17,7 @@ module.exports = function(config) {
     files: [
       './node_modules/babelify/node_modules/babel-core/browser-polyfill.js',
       './node_modules/react-tools/src/test/phantomjs-shims.js',
+      './src/**/*.js',
       './specs/**/*_spec.es6.js',
     ],
 
@@ -29,6 +30,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        './src/**/*.js': [ 'browserify' ],
         './specs/**/*_spec.es6.js': [ 'browserify' ]
 
     },
@@ -44,7 +46,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['story', 'progress', 'coverage'],
+    reporters: ['story', 'progress'],
 
 
     // web server port
@@ -66,7 +68,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'PhantomJS', 'Opera', 'Safari', 'Firefox'],
+    browsers: ['Chrome', 'PhantomJS', 'Safari', 'Firefox'],
 
 
     // Continuous Integration mode
