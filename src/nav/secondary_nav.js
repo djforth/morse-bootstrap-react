@@ -20,8 +20,8 @@ class Subnav extends React.Component {
   constructor(props) {
     super(props);
     // this.navShow = [ "navbar-collapse", "collapse", {in:false}];
-    this.btnShow = [{hide:true}, "navbar-header"]
-    this.state   = {device:"desktop", navShow:true, btnShow:this.getClasses(this.btnShow) }
+    this.btnShow = [{hide:true}, "navbar-header"];
+    this.state   = {device:"desktop", navShow:true, btnShow:this.getClasses(this.btnShow) };
   }
 
 
@@ -32,7 +32,7 @@ class Subnav extends React.Component {
     this.setButton(device);
 
     this.setState({
-      device:device,
+      device:device
     });
     detect.trackSize((device, size)=>{
       if(this.state.device !== device){
@@ -74,7 +74,7 @@ class Subnav extends React.Component {
   setButton(device){
     let state = _.clone(this.state);
         this.btnShow  = [{hide:(device !== "mobile")}, "navbar-header"];
-        state.btnShow = this.getClasses(this.btnShow)
+        state.btnShow = this.getClasses(this.btnShow);
         state.device  = device;
         state.navShow = (device !== "mobile");
         this.setState(state);
@@ -82,7 +82,7 @@ class Subnav extends React.Component {
 
   _onClick(e){
     e.preventDefault();
-    this.setState({navShow:!this.state.navShow})
+    this.setState({navShow:!this.state.navShow});
 
   }
 }

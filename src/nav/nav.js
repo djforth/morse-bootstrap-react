@@ -24,7 +24,7 @@ class NavDropdown extends React.Component {
     let device = detect.getDevice();
     this.size  = detect.windowSize();
     this.setState({
-      device:device,
+      device:device
     });
     detect.trackSize(function(device, size){
       if(this.state.device !== device){

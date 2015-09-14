@@ -17,4 +17,4 @@ class MainFlash extends React.Component {
   }
 }
 
-module.exports = MainFlash
+module.exports = MainFlash;
