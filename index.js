@@ -28,6 +28,7 @@ exports.NavBar = {
 };
 
 const FlashNotice = require("./lib/notices/flash_notices");
+const MainFlash   = require("./lib/notices/main_flash");
 
 exports.FlashNotice = FlashNotice;
-
+exports.MainFlash   = MainFlash;
