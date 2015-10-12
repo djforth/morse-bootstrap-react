@@ -1,6 +1,6 @@
 {
   "name": "morse-bootstrap-react",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Useful react mixins",
   "main": "index.js",
   "repository": {

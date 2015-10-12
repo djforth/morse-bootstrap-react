@@ -37,7 +37,7 @@ class FlashNotice extends React.Component {
         css = "danger";
       break;
       case "alert":
-        css = "warn";
+        css = "warning";
       break;
       case "success":
         css = "success";

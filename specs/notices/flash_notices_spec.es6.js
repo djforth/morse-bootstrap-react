@@ -96,7 +96,7 @@ describe('FlashNotice', function() {
 
     it("should return warn if type alert", function() {
       flash_notice.props.type = "alert";
-      expect(flash_notice.setAlert()).toEqual("warn");
+      expect(flash_notice.setAlert()).toEqual("warning");
     });
 
     it("should return success if type success", function() {
