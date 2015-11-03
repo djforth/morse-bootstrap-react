@@ -1,6 +1,6 @@
 {
   "name": "morse-bootstrap-react",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Useful react mixins",
   "main": "index.js",
   "repository": {
@@ -53,7 +53,7 @@
     "ajax-es6-module": "git://github.com/djforth/ajax-es6-module.git",
     "classnames": "^2.1.3",
     "lodash": "^3.10.0",
-    "morse-react-mixins":"git://github.com/djforth/morse-react-mixins.git",
+    "morse-react-mixins":"git://github.com/djforth/morse-react-mixins.git#v0.0.0",
     "react": "^0.13.1",
     "react-bootstrap": "^0.24.0",
     "react-mixin": "^1.6.0",
